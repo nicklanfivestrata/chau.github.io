@@ -6,7 +6,7 @@
   <meta name="description" content="Professional home services for window and bathroom replacements. Get a free consultation today!">
   <title>Home Services - Windows & Bathroom Replacements</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script async defer src="https://app.channelautomation.com/js/widget/jjzhe3tnzixvi2be/embed.js?id=embed_chatbot_container_id"></script>
+  <script async defer src="https://app.channelautomation.com/js/widget/jjzhe3tnzixvi2be/popup.js"></script>
 </head>
 <body class="bg-gray-50 font-sans leading-relaxed text-gray-800">
 
@@ -29,9 +29,19 @@
     <div class="container mx-auto text-center py-20">
       <h1 class="text-4xl font-bold mb-4">Transform Your Home with Ease</h1>
       <p class="text-lg mb-8">Expert window and bathroom replacement services tailored to your needs.</p>
-      <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Get a Free Quote</a>
+      <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Set Your Appointment Today</a>
     </div>
   </section>
+  <!-- Chat Script Trigger -->
+  <script>
+    function openChat() {
+      if (typeof ChannelAutomation !== 'undefined' && ChannelAutomation.openPopup) {
+        ChannelAutomation.openPopup();
+      } else {
+        console.error('Chat widget not initialized yet. Please check the script inclusion.');
+      }
+    }
+  </script>
 
   <!-- Services Section -->
   <section id="services" class="py-16">
@@ -82,10 +92,6 @@
         <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Send Message</button>
       </form>
     </div>
-  </section>
-
-  <section id="chat" class="py-16">
-    <div id="embed_chatbot_container_id"></div>
   </section>
 
   <!-- Footer -->
