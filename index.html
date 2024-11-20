@@ -12,6 +12,7 @@
   <script>
     function openChat() {
       const chatContainer = document.getElementById('embed_chatbot_container_id');
+      console.log('display', chatContainer.style.display)
       if (chatContainer.style.display === 'none' || chatContainer.style.display === '' || chatContainer.style.display === undefined) {
         chatContainer.style.display = 'block';
       }
