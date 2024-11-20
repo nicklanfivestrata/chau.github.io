@@ -6,7 +6,53 @@
   <meta name="description" content="Professional home services for window and bathroom replacements. Get a free consultation today!">
   <title>Home Services - Windows & Bathroom Replacements</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script async defer src="https://app.channelautomation.com/js/widget/jjzhe3tnzixvi2be/popup.js"></script>
+  <script async defer src="https://app.channelautomation.com/js/widget/jjzhe3tnzixvi2be/embed.js?id=embed_chatbot_container_id"></script>
+
+  <!-- Chat Script Trigger -->
+  <script>
+    function openChat() {
+      const chatContainer = document.getElementById('embed_chatbot_container_id');
+      if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        chatContainer.style.display = 'block'; // Show the chat widget
+      }
+      if (typeof ChannelAutomation !== 'undefined' && ChannelAutomation.openPopup) {
+        ChannelAutomation.openPopup();
+      } else {
+        console.warn('Chat widget script not fully initialized.');
+      }
+    }
+  </script>
+
+  <style>
+    #embed_chatbot_container_id {
+      display: none; /* Hidden by default */
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      z-index: 1000;
+    }
+  
+    #embed_chatbot_container_id header {
+      background: #1d4ed8;
+      color: #fff;
+      text-align: center;
+      font-weight: bold;
+      padding: 10px;
+      font-size: 16px;
+    }
+  
+    #embed_chatbot_container_id iframe {
+      width: 100%;
+      height: calc(100% - 40px); /* Adjust height for the header */
+      border: none;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 font-sans leading-relaxed text-gray-800">
 
@@ -32,16 +78,6 @@
       <a href="#contact" class="px-6 py-3 bg-blue-600 text-white rounded hover:bg-blue-700">Set Your Appointment Today</a>
     </div>
   </section>
-  <!-- Chat Script Trigger -->
-  <script>
-    function openChat() {
-      if (typeof ChannelAutomation !== 'undefined' && ChannelAutomation.openPopup) {
-        ChannelAutomation.openPopup();
-      } else {
-        console.error('Chat widget not initialized yet. Please check the script inclusion.');
-      }
-    }
-  </script>
 
   <!-- Services Section -->
   <section id="services" class="py-16">
@@ -93,6 +129,11 @@
       </form>
     </div>
   </section>
+
+  <div id="embed_chatbot_container_id">
+    <header>Chat with Us</header>
+  </div>
+  
 
   <!-- Footer -->
   <footer class="bg-gray-800 text-white py-6">
